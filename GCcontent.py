@@ -1,3 +1,20 @@
+def main(path):
+    file = open(path, "r")
+    fasta = file.read()
+    chains = extract_items(fasta)
+    counts = {}
+    for chain in chains:
+        count = count_GC(chains[chain])
+        counts[chain] = count
+    max = 0;
+    current = ""
+    for title in counts:
+        if counts[title] > max:
+            max = counts[title]
+            current = title
+    print(current)
+    print(max * 100)
+
 def extract_items(fasta):
     split = fasta.split(">")
     chains = {}
@@ -30,18 +47,4 @@ def count_GC(seq):
     return count/len(seq)
 
 if __name__ == '__main__':
-    file = open('./data/rosalind_gc.txt', "r")
-    fasta = file.read()
-    chains = extract_items(fasta)
-    counts = {}
-    for chain in chains:
-        count = count_GC(chains[chain])
-        counts[chain] = count
-    max = 0;
-    current = ""
-    for title in counts:
-        if counts[title] > max:
-            max = counts[title]
-            current = title
-    print(current)
-    print(max * 100)
+    main('./data/rosalind_gc.txt')

@@ -19,12 +19,6 @@ data = {
 'UGG':'W', 'CGG':'R', 'AGG':'R', 'GGG':'G',
 }
 
-values = {
-'U' : 0,
-'C' : 1,
-'A' : 2,
-'G' : 3,
-}
 
 def dna_to_protein(seq):
     final = []

@@ -12,4 +12,4 @@ def dna_to_rna(dna_seq):
 
     print(''.join(final))
 if __name__ == '__main__':
-    dna_to_rna(problem_set)
+    dna_to_rna(Sample_DNA)

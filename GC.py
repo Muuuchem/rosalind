@@ -6,7 +6,7 @@ def main(path):
     for chain in chains:
         count = count_GC(chains[chain])
         counts[chain] = count
-    max = 0;
+    max = 0
     current = ""
     for title in counts:
         if counts[title] > max:
